@@ -22,7 +22,7 @@ IN ADDITION TO THE TABULATE LISTING
 GET THIS SAS DATASET WORK.WANT
 ==============================
 
-PET TOT_OBS NUM_1 PCT_1 M_OBS M_1 M_PCT_1 F_OBS F_1 F_PCT_1
+PET TOT_OBS NUM_1 PCT_1 F_OBS F_1 F_PCT_1 M_OBS M_1 M_PCT_1
 
 CAT    5      3    60%    2    0   0%       3    3   100%
 DOG    5      3    60%    2    2   100%     3    1   33%
@@ -67,8 +67,8 @@ https://communities.sas.com/t5/SAS-Programming/Multiple-response-variable-analys
 /*                        |                                         |       _  U    C   _      C   _     C                */
 /*                        | proc tabulate data=have;                |    P  O  M    T   O  M   T   O F   T                */
 /*                        |  title                                  |    E  B  _    _   B  _   _   B _   _                */
-/*                        |  ,pet,Tot_obs,Num_1,pct_1,m_obs         |    T  S  1    1   S  1   1   S 1   1                */
-/*                        |  ,m_1,m_pct_1,f_obs,f_1,f_pct_1,"));    |                                                     */
+/*                        |  ,pet,Tot_obs,Num_1,pct_1,f_obs         |    T  S  1    1   S  1   1   S 1   1                */
+/*                        |  ,f_1,f_pct_1,m_obs,m_1,m_pct_1,"));    |                                                     */
 /*                        |  class sex ;                            |  CAT  5  3  60%   2  0 0%    3 3 100%               */
 /*                        |  var cat dog bird;                      |  DOG  5  3  60%   2  2 100%  3 1 33%                */
 /*                        |  table cat dog bird,                    |  BIRD 5  3  60%   2  2 100%  3 1 33%                */
@@ -175,8 +175,8 @@ ods listing
 
 proc tabulate data=have;
  title
- ",pet,Tot_obs,Num_1,pct_1,m_obs
- ,m_1,m_pct_1,f_obs,f_1,f_pct_1,";
+ ",pet,Tot_obs,Num_1,pct_1,f_obs
+ ,f_1,f_pct_1,m_obs,m_1,m_pct_1,";
  class sex ;
  var cat dog bird;
  table cat dog bird,
@@ -205,7 +205,7 @@ options formchar=
   '|----|+|---+=|-/\<>*' ;
 
 /**************************************************************************************************************************/
-/*  PET     TOT_OBS    NUM_1    PCT_1    M_OBS    M_1    M_PCT_1    F_OBS    F_1    F_PCT_1                               */
+/*  PET     TOT_OBS    NUM_1    PCT_1    F_OBS    F_1    F_PCT_1    M_OBS    M_1    M_PCT_1                               */
 /*                                                                                                                        */
 /* CAT        5         3       60%       2       0      0%          3       3      100%                                  */
 /* DOG        5         3       60%       2       2      100%        3       1      33%                                   */
@@ -220,3 +220,4 @@ options formchar=
  \___|_| |_|\__,_|
 
 */
+
