@@ -34,6 +34,9 @@ C    %let pgm=utl-creating-a-report-and-sas-table-from-proc-tabulate-listing-usi
          2 sas table output
            Bartosz Jablonski
            yabwon@gmail.com
+    github
+    https://tinyurl.com/3vkh7b3u
+    https://github.com/rogerjdeangelis/utl-creating-a-report-and-sas-table-from-proc-tabulate-listing-using-sas-proc-import
 
     sas communities
     https://tinyurl.com/4c46e698
